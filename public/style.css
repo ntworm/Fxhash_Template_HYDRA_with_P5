@@ -1,0 +1,23 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body {
+    flex-direction: row;
+    overflow: hidden;
+    touch-action: none;
+    background: black;
+}
+
+canvas1 {
+    margin: auto;
+    display: block;
+}
