@@ -1,7 +1,7 @@
 # Fxhash_Template_HYDRA_with_P5
 Resolution to use Hydra.js within P5, thus enabling a more open way to combine the two most used visual tools in FXHASH.
 
-To use it you need the FXHASH boilerplate, the Hydra.js and p5.js library, then just replace the HTML.js and INDEX.js (all in the same folder)
+You will need to have nodejs installed.
 
 Inside the Index we have 3 parts, the first is to define the canvas we will use, one for p5 and another for Hydra.
 
