@@ -1,7 +1,5 @@
 // ||||||||||||||||||||||||||||| FXHASH TEMPLATE - HYDRA + P5|||||||||||||||||||||||||||||||||||||||||||||||||||||||//            
-// Author: nt_worm  ||||  Twitter: @nt_worm
-// This work is licensed under the Creative Commons Attribution 4.0 International License.       //
-// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.                       //
+// Author: nt_worm  ||||  Twitter: @nt_worm  
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 /////////////////////////////// CANVAS FUNCTIONS/ //////////////////////////////////
 let WIDTH;
@@ -11,16 +9,13 @@ hydracanvas.width = 1500
 hydracanvas.height = 1500
 let hydra = new Hydra({detectAudio: false, canvas: hydracanvas})
 let p5graphics
+
 function setup (){
-  WIDTH = windowHeight + 10;
+  WIDTH = windowWidth;
   HEIGHT = windowWidth;
-  if (WIDTH>HEIGHT) HEIGHT = WIDTH
-  else WIDTH = HEIGHT
   hydra.setResolution(WIDTH, HEIGHT);
   mycanvas = createCanvas(WIDTH,HEIGHT, WEBGL)
   p5graphics = createGraphics(WIDTH, HEIGHT)
-  frameRate(60)
-  rectMode(CENTER);
 }
 /////////////////////////////////////HYDRA CANVAS///////////////////////////////////
 // src(o0)
@@ -39,14 +34,11 @@ osc (10,10,10)
 ////////////////////////////////P5 ANIMATION////////////////////////////////////////
 function draw() {
   noStroke()
-  plane(WIDTH +10,HEIGHT+10)
+  plane(WIDTH,HEIGHT)
   p5graphics.drawingContext.drawImage(hydracanvas, 0, 0)
   texture(p5graphics)
   
   
-}
-window.$fxhashFeatures = {
-
 }
 
 
