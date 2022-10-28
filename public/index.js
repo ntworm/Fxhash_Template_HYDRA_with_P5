@@ -12,7 +12,7 @@ let p5graphics
 
 function setup (){
   WIDTH = windowWidth;
-  HEIGHT = windowWidth;
+  HEIGHT = windowHeight;
   hydra.setResolution(WIDTH, HEIGHT);
   mycanvas = createCanvas(WIDTH,HEIGHT, WEBGL)
   p5graphics = createGraphics(WIDTH, HEIGHT)
