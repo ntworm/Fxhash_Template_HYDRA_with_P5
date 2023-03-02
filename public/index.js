@@ -11,11 +11,22 @@ let hydra = new Hydra({detectAudio: false, canvas: hydracanvas})
 let p5graphics
 
 function setup (){
-  WIDTH = windowWidth;
-  HEIGHT = windowHeight;
+  aspectratioaux = 1   // valores menores que 1 irão resultar em menor largura e maior altura
+  qualityofrender = (Math.sqrt((windowWidth * windowHeight))/1000) // define um valor mínimo para qualidade do render
+  if( qualityofrender < 1) qualityofrender = 1 // nunca sendo menor que 1, quanto maior a resolução da tela, maior o multiplicador
+  else qualityofrender = (Math.sqrt((windowWidth * windowHeight))/1000)
+  WIDTH = windowWidth
+  HEIGHT = windowHeight
+  HEIGHT = HEIGHT * qualityofrender
+  WIDTH = WIDTH  * aspectratioaux * qualityofrender
+  
+  pixelDensity(qualityofrender)
+  //console.log('quality of render', qualityofrender*2.5)
   hydra.setResolution(WIDTH, HEIGHT);
   mycanvas = createCanvas(WIDTH,HEIGHT, WEBGL)
-  p5graphics = createGraphics(WIDTH, HEIGHT)
+  p5graphics = createGraphics(WIDTH-2, HEIGHT)
+  frameRate(60)
+  rectMode(CENTER);
 }
 /////////////////////////////////////HYDRA CANVAS///////////////////////////////////
 // src(o0)
@@ -34,17 +45,16 @@ osc (10,10,10)
 ////////////////////////////////P5 ANIMATION////////////////////////////////////////
 function draw() {
   noStroke()
-  plane(WIDTH,HEIGHT)
-  p5graphics.drawingContext.drawImage(hydracanvas, 0, 0)
+  plane(WIDTH, HEIGHT+15)
+  p5graphics.drawingContext.drawImage(hydracanvas,0,0)
   texture(p5graphics)
-  
-  
 }
 
 
 
 
-
+//infelizmente algumas resoluções resultam em uma linha preta na parte inferior do canvas
+// para corrigir basta ir ao CSS e aumentar o valor do zoom para + 104%
 
 
 
