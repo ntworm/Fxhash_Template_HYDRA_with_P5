@@ -24,6 +24,12 @@
       }
       var fxrand = sfc32(...hashes)
       //---- /do not edit the following code
+    var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
+    function fxpreview() {
+    window.dispatchEvent(new Event("fxhash-preview"))
+    setTimeout(() => fxpreview()
+    ,2000)
+    }
     </script> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
    
