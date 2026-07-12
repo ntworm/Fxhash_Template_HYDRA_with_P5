@@ -1,6 +1,5 @@
 const CopyPlugin = require("copy-webpack-plugin")
 const config = require("./webpack.config")
-const ZipperPlugin = require("./ZipperPlugin")
 const path = require("path")
 
 module.exports = {
@@ -20,7 +19,6 @@ module.exports = {
           }
         }
       ]
-    }),
-    new ZipperPlugin()
+    })
   ]
 }
